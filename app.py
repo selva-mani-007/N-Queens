@@ -205,10 +205,11 @@ if st.session_state.solutions:
     )
     
     current_solution = st.session_state.solutions[st.session_state.current_solution_index]
-    board_html = visualize_board_html(3, current_solution)
+    board_html = visualize_board_html(n, current_solution)
     st.markdown(f'<div style="display: flex; justify-content: center; margin-top: 20px;">{board_html}</div>', unsafe_allow_html=True)
 
 else:
 
     st.info("Set the board size and number of queens, then click 'Find Solutions'.")
+
 
