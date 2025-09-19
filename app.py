@@ -172,8 +172,10 @@ if 'current_solution_index' not in st.session_state:
 # to create the seamless grid effect.
 grid = st.columns([2, 2, 3])
 with grid[0]:
+    st.markdown("**Board size**")
     n = st.number_input("Board (n)", min_value=1, max_value=12, value=4, label_visibility="collapsed")
 with grid[1]:
+    st.markdown("**Number of Queens (k)**")
     k = st.number_input("Queens (k)", min_value=1, max_value=n, value=4, label_visibility="collapsed")
 with grid[2]:
     if st.button("Find Solutions"):
@@ -207,4 +209,5 @@ if st.session_state.solutions:
     st.markdown(f'<div style="display: flex; justify-content: center; margin-top: 20px;">{board_html}</div>', unsafe_allow_html=True)
 
 else:
+
     st.info("Set the board size and number of queens, then click 'Find Solutions'.")
